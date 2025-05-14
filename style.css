@@ -1,0 +1,41 @@
+body {
+    background-color: #ffe6e6;
+    padding-top: 75px;
+}
+
+.card {
+    background-color: #ffcccc;
+    border: none;
+    padding: 1rem;
+}
+
+.ilk-baslik {
+    background-color: #800000;
+    color: white;
+    padding: 3rem;
+    text-align: center;
+}
+
+h5,h2{
+    color: #800000;
+
+}
+
+.navbar {
+    background-color: #800000;
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+}
+
+.right-card:hover {
+    transform: scale(1.01);
+    transition: 0.3s ease;
+}
+
+.btn-pano {
+    background-color: #800000;
+    color: #fff;
+    border: none;
+}

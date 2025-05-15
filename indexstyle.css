@@ -1,0 +1,49 @@
+ body {
+    background-color: #ffe6e6;
+ }
+
+.yazi {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.yazi h1 {
+    color: #800000;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.yazi p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn-custom {
+    background-color: #800000;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    margin: 10px;
+}
+
+.navbar {
+    background-color: #800000;
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+}
+
+.button-group {
+    margin-top: 30px;
+}
+
+.site-footer {
+    background-color: #ffcccc;
+    color: #800000;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 0;
+}

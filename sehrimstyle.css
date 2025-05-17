@@ -1,0 +1,43 @@
+.carousel-inner img {
+  height: 600px;
+  object-fit: cover;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.btn-pano {
+    background-color: #800000;
+    color: #fff;
+    border: none;
+}
+
+.site-footer {
+    background-color: #800000;
+    color: #ffcccc;
+    padding: 15px 0;    
+    width: 100%;
+}
+
+.card-img-top {
+    height: 670px; 
+    object-fit: cover; 
+    object-position: center;
+}
+
+.sehrim-baslik {
+    background-image: url('yaprak.jpeg'); 
+    background-size: cover;              
+    background-position: center;         
+    color: white;                        
+    padding: 100px;                       
+    text-align: center;                  
+}
+
+.sehrim-baslik h1{
+    font-size: 70px;
+}
+
+
+

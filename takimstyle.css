@@ -1,0 +1,25 @@
+.takim-baslik {
+    background-image: url('football3.jpeg'); 
+    background-size: cover;              
+    background-position: center;         
+    color: white;                        
+    padding: 100px;                       
+    text-align: center;                  
+}
+
+.takim-baslik h1{
+    font-size: 80px;
+}
+
+.card-img-top {
+    height: 650px; 
+    object-fit: cover; 
+    object-position: center;
+}
+
+.site-footer {
+    background-color: #800000;
+    color: #ffcccc;
+    padding: 15px 0;    
+    width: 100%;
+}

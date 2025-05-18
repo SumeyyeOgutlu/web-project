@@ -21,7 +21,7 @@ html {
 }
 
 .card-img-top {
-    height: 670px; 
+    height: 600px; 
     object-fit: cover; 
     object-position: center;
 }
@@ -38,6 +38,8 @@ html {
 .sehrim-baslik h1{
     font-size: 70px;
 }
+
+
 
 
 

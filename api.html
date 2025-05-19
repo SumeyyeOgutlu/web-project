@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlgi Alanım</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="apistyle.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="hakkinda.html"><i class="fa-solid fa-house me-2"></i>Hakkımda</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="cv.html"><i class="fa-solid fa-file me-2"></i>Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehrim.html"><i class="fa-solid fa-city me-2"></i>Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="takim.html"><i class="fa-regular fa-futbol me-2"></i></i>Takımımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="api.html"><i class="fa-solid fa-face-smile me-2"></i>İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html"><i class="fa-solid fa-square-phone me-2"></i>İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-key me-2"></i>Giriş</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="api-baslik">
+        <h1>Karsu'nun en popüler 5 şarkısı</h1>
+    </header> 
+
+    <div class="container mt-4">
+        <ul id="track-list" class="row g-3 justify-content-center"></ul>
+    </div>
+
+<script>
+  const trackImages = [
+  "reloadingmymind.jpg",
+  "jestoldukarsu.jpeg",
+  "reloadingmymind.jpg",
+  "birakbeniboyle.jpg",
+  "sonunda.jpg"
+];
+
+const spotifyLinks = [
+  "https://open.spotify.com/intl-tr/track/4zvluMaWTXLLhWhxe6F1E1",
+  "https://open.spotify.com/intl-tr/track/36od5gfj11fNcwuFKK7x4J",
+  "https://open.spotify.com/intl-tr/track/5WFJ1tJPVIIepITJX7lJww",
+  "https://open.spotify.com/intl-tr/track/5axNoeOxlWmo3ApNZXJwQQ",
+  "https://open.spotify.com/intl-tr/track/0IaklNftCauY2AYpkIJBR1"
+];
+
+const apiKey = "1c4cc3c4477c5a6fc2892b580265a503"; 
+const artist = "Karsu";
+const limit = 5;
+
+const trackList = document.getElementById("track-list");
+
+fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${encodeURIComponent(artist)}&api_key=${apiKey}&format=json&limit=${limit}`)
+  .then(response => response.json())
+  .then(data => {
+    if (!data.toptracks || !data.toptracks.track) {
+      trackList.innerHTML = "<p class='text-danger'>Şarkı bulunamadı.</p>";
+      return;
+    }
+
+    const tracks = data.toptracks.track;
+    trackList.innerHTML = ""; 
+
+    tracks.forEach((track, index) => {
+      const imageUrl = trackImages[index] || "https://via.placeholder.com/300x300?text=No+Image";
+      const spotifyUrl = spotifyLinks[index] || "#";
+
+      const card = document.createElement("div");
+      card.className = "col-md-3";
+
+      card.innerHTML = `
+        <div class="card h-100 shadow">
+          <img src="${imageUrl}" class="card-img-top" alt="${track.name}">
+          <div class="card-body text-center">
+            <h5 class="card-title">${track.name}</h5>
+            <p class="card-text text-muted">${track.playcount} dinlenme</p>
+            <a href="${spotifyUrl}" target="_blank" class="btn btn-success mt-2">
+                <i class="fa-brands fa-spotify"></i> Spotify'da Dinle
+                </a>
+          </div>
+        </div>
+      `;
+
+      trackList.appendChild(card);
+    });
+  })
+  .catch(err => {
+    trackList.innerHTML = "<p class='text-danger'>Veri alınırken hata oluştu.</p>";
+    console.error(err);
+  });
+</script>
+
+<footer class="site-footer">
+    <div class="container text-center py-3">
+        <p>&copy; 2025 Tüm Hakları Saklıdır.</p>
+    </div>
+</footer>
+</body>

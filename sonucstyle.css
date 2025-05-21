@@ -1,0 +1,39 @@
+body {
+  background-color: #ffe6e6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.card {
+  background-color: #ffcccc;
+  border: none;
+  padding: 1rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.card-title {
+  color: #800000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-pano {
+  background-color: #800000;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-pano:hover {
+  background-color: #a30000;
+  color: #fff;
+  transition: 0.3s ease;
+}

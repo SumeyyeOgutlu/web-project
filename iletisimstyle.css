@@ -1,0 +1,29 @@
+.form { 
+width: 400px; 
+margin: 20px auto; 
+background: #cce5ff; 
+padding: 20px; 
+border-radius: 8px; 
+}
+
+label { 
+display: block; 
+margin-top: 10px; 
+}
+
+.orta-alan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 100px; /* Burayı isteğine göre artırıp azaltabilirsin */
+    text-align: center;
+}
+
+.orta-alan h2 {
+    font-size: 60px;
+    color: #800000;
+    margin-bottom: 20px;
+}
+

@@ -3,34 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş</title>
+    <title>İletişim Sayfası</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="indexstyle.css">
     <link rel="stylesheet" href="style.css">
-    
-    <script>
-        function validateForm() {
-            var mail = document.getElementById("mail").value;
-            var sifre = document.getElementById("sifre").value;
-
-            if (mail === "" || sifre === "") {
-                alert("Lütfen tüm alanları doldurunuz.");
-                return false;
-            }
-
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(mail)) {
-                alert("Geçerli bir mail adresi giriniz.");
-                return false;
-            }
-
-            return true;
-        }
-    </script>
-
+    <link rel="stylesheet" href="iletisimstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="hakkinda.html"><i class="fa-solid fa-house me-2"></i>Hakkımda</a>
@@ -50,29 +31,43 @@
         </div>
     </nav>
 
-<div class="orta-alan">
-    <h2 class="mb-3">BLOĞUMA HOŞGELDİN</h2>
-    <p>Daha fazla özellik için giriş yapın.</p>
-    
-    <div class="card m-5 p-3" style="width: 18rem;">
-        <div class="card-body">
-            <form action="kontrol.php" method="POST" onsubmit="return validateForm()">
-                <label>E-posta:</label>
-                <input type="email" class="form-control mb-3" name="kullanici_adi" id="mail">
-                <label>Şifre:</label>
-                <input type="password" class="form-control mb-3" name="sifre" id="sifre">
-                <button type="submit" class="btn btn-pano mt-2 w-100">Giriş Yap</button>
-            </form>
-        </div>
-    </div>
+<div id="app" class="d-flex justify-content-center align-items-center flex-column">
+  <h2 class="text-center mb-4">İLETİŞİM FORMU</h2>
+  <div class="card" style="max-width: 500px; width: 100%;">
+    <div class="card-body">
+    <label>Ad:</label>
+    <input type="text" v-model="ad" placeholder="adınızı giriniz">
+
+    <label>Soyad:</label>
+    <input type="text" v-model="soyad" placeholder="soyadınızı giriniz.">
+
+    <label>Doğum Tarihi:</label>
+    <input type="date" v-model="dogumTarihi">
+
+    <label>Email:</label>
+    <input type="text" v-model="email" placeholder="deneme@gmail.com">
+
+    <label>telefon Numarası:</label>
+    <input type="text" v-model="telefon" placeholder="0555 555 55 55">
+
+    <label>Cinsiyet:</label>
+    <input type="radio" value="Kadın" v-model="cinsiyet"> Kadın
+    <input type="radio" value="Erkek" v-model="cinsiyet"> Erkek
+
+    <label>Düşünceleriniz:</label>
+    <textarea v-model="dusunce"></textarea>
+
+    <br><br>
+    <button type="button" class="btn-pano" @click="temizle">Temizle</button>
+    <button type="button" class="btn-pano" @click="gonder">Gönder</button>
+
+    <p style="color:red;">{{ mesaj }}</p>
+  </div>
+</div>
 </div>
 
-<footer class="site-footer">
-    <div class="container text-center py-3">
-        <p>&copy; 2025 Tüm Hakları Saklıdır.</p>
-    </div>
-</footer>
-
+<script src="form.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

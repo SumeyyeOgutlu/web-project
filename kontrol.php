@@ -11,12 +11,11 @@ if ($kullanici_adi == $dogru_mail && $sifre == $dogru_sifre) {
     $numara = explode("@", $kullanici_adi)[0];
     echo "Hoşgeldin $numara";
 } else {
-    // Başarısızsa index sayfasına yönlendir
-    //header("Location: index.html");
-    //exit();
+    
+    // Başarısızsa uayarı verir 2s'ye bekler ve index sayfasına yönlendir
     echo "<h2 style='text-align:center; margin-top:100px; background-color: #ffcccc color:red;'>Kayıt bulunamadı, tekrar giriş yapın...</h2>";
     header("Refresh:2; url=index.html");
     exit();
-   //echo "<meta http-equiv='refresh' content='2;url=index.html'>";
+   
 }
 ?>

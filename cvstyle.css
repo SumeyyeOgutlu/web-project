@@ -37,3 +37,13 @@ section {
     width: 200px;
     background-color:#d4cece;
 }
+
+aside img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px; /* hafif köşe yumuşatma */
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}

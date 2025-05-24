@@ -9,11 +9,15 @@ $dogru_sifre = "b241210021";
 if ($kullanici_adi == $dogru_mail && $sifre == $dogru_sifre) {
     // Mailin '@' işaretinden önceki kısmı
     $numara = explode("@", $kullanici_adi)[0];
-    echo "Hoşgeldin $numara";
+    echo "<body style='background-color: #ffcccc;'>";
+    echo "<h1 style='text-align:center; margin-top:100px; color: #800000;'>Hoşgeldin $numara</h1>";
+    echo "</body>";
 } else {
     
     // Başarısızsa uayarı verir 2s'ye bekler ve index sayfasına yönlendir
-    echo "<h2 style='text-align:center; margin-top:100px; background-color: #ffcccc color:red;'>Kayıt bulunamadı, tekrar giriş yapın...</h2>";
+    echo "<body style='background-color: #ffcccc;'>";
+    echo "<h1 style='text-align:center; margin-top:100px; color: #800000;'>Kayıt bulunamadı, tekrar giriş yapın...</h1>";
+    echo "</body>";
     header("Refresh:2; url=index.html");
     exit();
    

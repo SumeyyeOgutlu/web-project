@@ -39,3 +39,10 @@ h5,h2{
     color: #fff;
     border: none;
 }
+
+.site-footer {
+    background-color: #800000;
+    color: #ffcccc;
+    padding: 15px 0;    
+    width: 100%;
+}

@@ -1,6 +1,6 @@
 new Vue({
   el: '#app',
-  data: {
+    data: {
     ad: '',
     soyad: '',
     dogumTarihi: '',
@@ -8,11 +8,12 @@ new Vue({
     telefon:'',
     cinsiyet: '',
     dusunce: '',
+    yildiz: '',
     mesaj: ''
   },
   methods: {
     kontrolEt() {
-      if (!this.ad || !this.soyad || !this.dogumTarihi || !this.email || !this.cinsiyet || !this.dusunce) {
+      if (!this.ad || !this.soyad || !this.dogumTarihi || !this.email || !this.cinsiyet || !this.dusunce || !this.yildiz) {
         this.mesaj = 'Tüm alanları doldurmalısınız!';
         return;
       }
@@ -38,6 +39,7 @@ new Vue({
       this.telefon='';
       this.cinsiyet = null;
       this.dusunce = '';
+      this.yildiz= '';
       this.mesaj = '';
     },
     gonder() {
@@ -50,7 +52,8 @@ new Vue({
           email: this.email,
           telefon:this.telefon,
           cinsiyet: this.cinsiyet,
-          dusunce: this.dusunce
+          dusunce: this.dusunce,
+          yildiz: this.yildiz
         };
         localStorage.setItem('iletisimBilgileri', JSON.stringify(bilgiler));
         window.location.href = 'sonuc.html';

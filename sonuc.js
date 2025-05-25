@@ -10,6 +10,7 @@ window.onload = function() {
       <p>Telefon: ${bilgiler.telefon}</p>
       <p>Cinsiyet: ${bilgiler.cinsiyet}</p>
       <p>Düşünce: ${bilgiler.dusunce}</p>
+      <p>Yıldız: ${bilgiler.yildiz}</p>
     `;
   } else {
     sonuc.innerHTML = '<p>Henüz bilgi gönderilmedi.</p>';

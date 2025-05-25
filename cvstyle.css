@@ -42,7 +42,7 @@ aside img {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    border-radius: 10px; /* hafif köşe yumuşatma */
+    border-radius: 10px;
     display: block;
     margin: 0 auto;
     margin-bottom: 20px;

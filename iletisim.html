@@ -44,7 +44,7 @@
     <label>Doğum Tarihi:</label>
     <input type="date" v-model="dogumTarihi">
 
-    <label>Email:</label>
+    <label>E-posta:</label>
     <input type="text" v-model="email" placeholder="deneme@gmail.com">
 
     <label>telefon Numarası:</label>
@@ -56,6 +56,16 @@
 
     <label>Düşünceleriniz:</label>
     <textarea v-model="dusunce"></textarea>
+
+    <label>Siteye yıldızınız:</label>
+    <select v-model="yildiz">
+    <option disabled value="">Lütfen yıldız seçin.</option>
+    <option>⭐</option>
+    <option>⭐⭐</option>
+    <option>⭐⭐⭐</option>
+    <option>⭐⭐⭐⭐</option>
+    <option>⭐⭐⭐⭐⭐</option>
+    </select>
 
     <br><br>
     <button type="button" class="btn-pano" @click="temizle">Temizle</button>

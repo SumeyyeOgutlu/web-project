@@ -1,17 +1,17 @@
 .api-baslik {
-    background-image: url('mikrofon.jpeg'); 
-    background-size: cover;              
-    background-position: center;         
-    color: white;                        
-    padding: 100px;                       
-    text-align: center;                  
+  background-image: url('mikrofon.jpeg'); 
+  background-size: cover;              
+  background-position: center;         
+  color: white;                        
+  padding: 100px;                       
+  text-align: center;                  
 }
 
 .site-footer {
-    background-color: #800000;
-    color: #ffcccc;
-    padding: 15px 0;    
-    width: 100%;
+  background-color: #800000;
+  color: #ffcccc;
+  padding: 15px 0;    
+  width: 100%;
 }
 
 .card {

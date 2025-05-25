@@ -1,14 +1,14 @@
 .form { 
-width: 400px; 
-margin: 20px auto; 
-background: #cce5ff; 
-padding: 20px; 
-border-radius: 8px; 
+    width: 400px; 
+    margin: 20px auto; 
+    background: #cce5ff; 
+    padding: 20px; 
+    border-radius: 8px; 
 }
 
 label { 
-display: block; 
-margin-top: 10px; 
+    display: block; 
+    margin-top: 10px; 
 }
 
 .orta-alan {
